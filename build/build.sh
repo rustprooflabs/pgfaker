@@ -50,14 +50,6 @@ for image in `ls docker/  ` ; do
         echo "${image}-${PG_VER}:  finished"
     done
 
-
-    echo "Copying artifacts for ${OS_DIST} ${OS_VER}"
-    cd $BASE
-
-    for f in $(find target -name "*.deb") $(find target -name "*.rpm") $(find target -name "*.apk"); do
-        echo "copy: ${f}"
-        cp $f $ARTIFACTDIR/
-    done
 done
 
-#tar -zcvf $BUILDDIR/pgfaker-binaries.tar.gz -C $ARTIFACTDIR .
+echo 'Built packages are available under ../target/release/pgfaker-pgXX/'
