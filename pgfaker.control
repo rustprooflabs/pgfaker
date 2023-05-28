@@ -1,5 +1,5 @@
 comment = 'Create Fake data in Postgres.  Created using pgrx, wraps around Rust faker libraries.'
-default_version = '@CARGO_VERSION@'
+default_version = '0.0.1'
 module_pathname = '$libdir/pgfaker'
 relocatable = false
 superuser = true
