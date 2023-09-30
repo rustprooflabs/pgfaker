@@ -1,4 +1,6 @@
-FROM debian:11
+# Uses the PostGIS image used by PgOSM Flex. At time of writing
+# it was Debian 11 (bullseye)
+FROM postgis/postgis:16-3.4
 
 LABEL maintainer="PgFaker Project - https://github.com/rustprooflabs/pgfaker"
 
@@ -13,9 +15,7 @@ RUN useradd -m ${USER} --uid=${UID}
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y make wget curl gnupg git postgresql-common \
-         lsb-release wget software-properties-common gnupg \
-    # Install latest clang and llvm per https://apt.llvm.org/ 
-    && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+         lsb-release wget software-properties-common gnupg
 
 RUN sh /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
 
@@ -28,11 +28,11 @@ RUN apt-get install -y --fix-missing \
         libldap-dev libkrb5-dev gettext tcl-tclreadline tcl-dev libperl-dev \
         libpython3-dev libprotobuf-c-dev libprotobuf-dev gcc \
         ruby ruby-dev rubygems \
-        postgresql-11 postgresql-server-dev-11 \
         postgresql-12 postgresql-server-dev-12 \
         postgresql-13 postgresql-server-dev-13 \
         postgresql-14 postgresql-server-dev-14 \
         postgresql-15 postgresql-server-dev-15 \
+        postgresql-16 postgresql-server-dev-16 \
     && apt autoremove -y
 
 
