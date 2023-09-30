@@ -23,6 +23,21 @@ SELECT pgfaker.company(), pgfaker.person_first_name(), pgfaker.person_last_name(
 ;
 ```
 
+```bash
+┌─[ RECORD 1 ]──────┬─────────────────────────────┐
+│ company           │ Jacobson-Wyman              │
+│ person_first_name │ Adell                       │
+│ person_last_name  │ Treutel                     │
+│ person_prefix     │ Mr.                         │
+│ person_suffix     │ Jr.                         │
+│ email             │ mwhite6@glover.net          │
+│ phone             │ (907) 125-0407              │
+│ slogan            │ Configurable scalable users │
+│ username          │ dwalker                     │
+│ domain            │ weissnat.name               │
+└───────────────────┴─────────────────────────────┘
+```
+
 
 
 ## Creating installer for your system
