@@ -5,10 +5,10 @@ BASE=$(dirname `pwd`)
 VERSION=$(cat $BASE/pgfaker.control | grep default_version | cut -f2 -d\')
 LOGDIR=${BASE}/target/logs
 ARTIFACTDIR=${BASE}/target/artifacts
-PGRXVERSION=0.12.0-alpha.1
+PGRXVERSION=0.16.1
 
-#PG_VERS=("pg12" "pg13" "pg14" "pg15" "pg16")
-PG_VERS=("pg16")
+PG_VERS=("pg14" "pg15" "pg16" "pg17" "pg18")
+#PG_VERS=("pg18")
 
 echo $BASE
 echo $VERSION
